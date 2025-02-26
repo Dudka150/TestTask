@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MortgageViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
+
+
+
+Route::get('/mortgages', function () {
+    return view('mortgages.index');
+})->name('index');
+
+Route::get('/admin/mortgages', function () {
+    return view('admin.index');
+})->name('admin');
